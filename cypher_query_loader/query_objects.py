@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 import re
-from warnings import warn
 
 
 class QueryLoader:
@@ -10,7 +9,10 @@ class QueryLoader:
     _params_regex = re.compile(r"\$\w+(?=\b)")
 
     def __init__(self, file_path: Path):
-        """An object that will lazy load a cypher query from a file and its parameters."""
+        """An object that will lazy load a cypher query from a file and its parameters.
+        
+        file_path: Path, a  path to a .cypher file.
+        """
         self.path = file_path
 
     @property
@@ -47,7 +49,11 @@ class QueryLoader:
 
 
 class CypherQueries:
-    """Container for QueryLoaders built from a directory of cypher queries."""
+    """Container for QueryLoaders built from a directory of cypher queries.
+
+    Parameters:
+    dir: Path, a path to a directory containing .cypher files.    
+    """
 
     def __init__(self, dir):
         dir = Path(dir)
