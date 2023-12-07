@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "cypher-query-loader"
+version = "0.1.0"
+description = "Load cypher queries from a directory as python string objects."
+authors = ["Ted Johnson <ted.johnson87@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
