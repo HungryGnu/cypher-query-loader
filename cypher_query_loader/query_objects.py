@@ -6,7 +6,7 @@ import re
 class QueryLoader:
     _query = None
     _params = None
-    _params_regex = re.compile(r"\$\w+(?=\b)")
+    _params_regex = re.compile(r"(?<=\$)\w+(?=\b)")
 
     def __init__(self, file_path: Path):
         """An object that will lazy load a cypher query from a file and its parameters.
